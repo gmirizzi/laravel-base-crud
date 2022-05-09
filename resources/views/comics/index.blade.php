@@ -7,6 +7,7 @@
         <div class="col">
             <a href="{{route('comics.show', $comic->id)}}">
                 <div class="card">
+                    <img src="{{$comic->thumb}}" class="card-img-top" alt="...">
                     <h2>{{$comic->title}}</h2>
                 </div>
             </a>
