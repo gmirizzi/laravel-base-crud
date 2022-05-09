@@ -4,11 +4,10 @@
 <div class="container">
     <div class="row row-cols-5">
         @foreach ($comics as $comic)
-        @dd($comics)
         <div class="col">
-            <a href="{{route('comics.show', 'comics[id]')}}">
+            <a href="{{route('comics.show', $comic->id)}}">
                 <div class="card">
-                    <h2>{{$comic['title']}}</h2>
+                    <h2>{{$comic->title}}</h2>
                 </div>
             </a>
         </div>
