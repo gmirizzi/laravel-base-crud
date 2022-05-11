@@ -1,6 +1,6 @@
 <header>
     <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
               <a class="navbar-brand" href="{{route('home')}}"> 
                   <img src="{{asset('images/dc-logo.png')}}" alt="Logo DC Comics" />
@@ -11,7 +11,31 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" href="{{route('comics.index')}}">Comics</a>
+                    <a class="nav-link" href="#">Characters</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="{{strrpos(Route::current()->uri(), 'comics') !== false ? 'nav-link active' : 'nav-link'}}" href="{{route('comics.index')}}">Comics</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Movies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Tv</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Games</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Collectibles</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Videos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Fans</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
                   </li>
                 </ul>
                 <form class="d-flex">
