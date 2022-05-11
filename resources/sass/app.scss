@@ -1,1 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
+
+footer {
+    background-image: url("./../../public/images/footer-bg.jpg");
+    .container {
+        height: 450px;
+    }
+}
