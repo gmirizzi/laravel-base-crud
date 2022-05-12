@@ -1,4 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
+@import url('./../../public/css/partials/_reset.css');
+@import url('./../../public/css/partials/_variables.css');
+
+#jumbotron {
+    height: 400px;
+    background-image: url("./../../public/images/jumbotron.jpg");
+    background-position-x: center;
+}
+
+#topbar {
+    height: 100px;
+    background-color: var(--blue);
+    .card {
+        position: absolute;
+        bottom: 20px;
+        width: 18rem;
+    }
+}
 
 footer {
     background-image: url("./../../public/images/footer-bg.jpg");
