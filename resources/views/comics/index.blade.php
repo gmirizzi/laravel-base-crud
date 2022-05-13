@@ -16,7 +16,7 @@
                                 @csrf
                                 @method('DELETE')
                                 <a class="btn btn-primary" href="{{route('comics.edit', $comic->id)}}">Edit</a>
-                                <button class="btn btn-danger" href="#">Delete</button>
+                                <button class="btn btn-danger">Delete</button>
                             </form>
                         </div>
                     </div>
