@@ -6,10 +6,16 @@
     <div class="row row-cols-5 p-5">
         @foreach ($comics as $comic)
         <div class="col">
-            <a href="{{route('comics.show', $comic->id)}}">
-                <div class="card">
-                    <img src="{{$comic->thumb}}" class="card-img-top" alt="...">
-                    <h2>{{$comic->title}}</h2>
+            <a class="text-reset text-decoration-none" href="{{route('comics.show', $comic->id)}}">
+                <div class="card border-0 text-start bg-transparent h-100 ">
+                    <img src="{{$comic->thumb}}" class="card-img-top" alt="{{$comic->title}}">
+                    <div class="card-body d-flex flex-column h-100 justify-content-between">
+                        <h5 class="card-title text-uppercase text-white">{{$comic->title}}</h5>
+                        <div>
+                            <a class="btn btn-primary" href="{{route('comics.edit', $comic->id)}}">Edit</a>
+                            <a class="btn btn-danger" href="#">Delete</a>
+                        </div>
+                    </div>
                 </div>
             </a>
         </div>

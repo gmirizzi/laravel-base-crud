@@ -12179,6 +12179,10 @@ fieldset:disabled .btn {
   }
 }
 
+main {
+  background-color: #1c1c1c;
+}
+
 #jumbotron {
   height: 400px;
   background-image: url(/images/jumbotron.jpg?1b0a3671766964a4114f90322970b124);
