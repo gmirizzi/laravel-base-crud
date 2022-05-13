@@ -12,8 +12,12 @@
                     <div class="card-body d-flex flex-column h-100 justify-content-between">
                         <h5 class="card-title text-uppercase text-white">{{$comic->title}}</h5>
                         <div>
-                            <a class="btn btn-primary" href="{{route('comics.edit', $comic->id)}}">Edit</a>
-                            <a class="btn btn-danger" href="#">Delete</a>
+                            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <a class="btn btn-primary" href="{{route('comics.edit', $comic->id)}}">Edit</a>
+                                <button class="btn btn-danger" href="#">Delete</button>
+                            </form>
                         </div>
                     </div>
                 </div>
