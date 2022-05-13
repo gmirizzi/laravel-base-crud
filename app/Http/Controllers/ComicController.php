@@ -6,7 +6,15 @@ use App\Comic;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
-{
+{   
+    protected $validationRules=[
+        'title'     =>'required|max:100',
+        'thumb'     =>'nullable|url|max:255',
+        'price'     =>'nullable|numeric|digits_between:0,8',
+        'series'    =>'nullable|max:50',
+        'sale_date' =>'nullable|date',
+        'type'      =>'nullable|max:20'
+    ];
     /**
      * Display a listing of the resource.
      *
@@ -24,7 +32,7 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
         return view('comics.create');
     }
 
@@ -35,7 +43,8 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    {   
+        $request->validate($this->validationRules);
         $data=$request->all();
         $newComic=new Comic;
         $newComic->fill($data);
@@ -73,7 +82,8 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Comic $comic)
-    {
+    {   
+        $request->validate($this->validationRules);
         $data=$request->all();
         $comic->update($data);
         return redirect()->route('comics.show', $comic->id);
