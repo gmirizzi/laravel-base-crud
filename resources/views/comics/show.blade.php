@@ -16,7 +16,13 @@
     <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
         @csrf
         @method('DELETE')
-        <button class="btn btn-danger">Delete</button>
+        <script>
+            function ConfirmDelete()
+            {
+              return confirm("Are you sure you want to delete?");
+            }
+        </script>  
+        <button class="btn btn-danger" onclick="return ConfirmDelete()">Delete</button>
     </form>
 </div>
 @endsection
